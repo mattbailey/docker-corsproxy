@@ -18,4 +18,4 @@ RUN chmod 744 /start.sh
 
 EXPOSE 80 443
 
-CMD ["start.sh"]
+CMD ["/start.sh"]
