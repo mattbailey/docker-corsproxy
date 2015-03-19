@@ -19,7 +19,8 @@ Example:
 docker run --rm -t \
   -e PROXY_HOST=https://www.google.com \
   -e ALLOW_HEADERS=X-MyCustom-API-Key,X-Some-Token \
-  -e EXPOSE_HEADERS=X-Some-Response-Token
+  -e EXPOSE_HEADERS=X-Some-Response-Token \
+  -e API_RECTIFY='foo|bar' \
   -p 8080:80 \
   mattbailey/docker-corsproxy
 ```
