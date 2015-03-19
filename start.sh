@@ -16,4 +16,4 @@
 [[ -n "$API_RECTIFY" ]] && sed -ie "s/API_RECTIFY/${API_RECTIFY}/" /etc/nginx/nginx.conf
 
 # Runtime
-nginx -g daemon off;
+nginx -g 'daemon off;'
