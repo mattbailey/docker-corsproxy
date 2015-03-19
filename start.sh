@@ -13,7 +13,7 @@
 #   proxy, rather than re-direct these endpoints. e.g.:
 #   docker run (...) -e API_RECTIFY='foo|bar' will create a location directive
 #   to proxy /foo and /bar to /foo/ and /bar/
-[[ -n "$API_RECTIFY" ]] && sed -ie "s/API_RECTIFY/${API_RECTIFY}/" /etc/nginx.nginx.conf
+[[ -n "$API_RECTIFY" ]] && sed -ie "s/API_RECTIFY/${API_RECTIFY}/" /etc/nginx/nginx.conf
 
 # Runtime
 nginx -g daemon off;
