@@ -14,6 +14,7 @@ VOLUME ["/var/cache/nginx"]
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY start.sh /start.sh
+RUN chmod 744 /start.sh
 
 EXPOSE 80 443
 
