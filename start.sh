@@ -15,5 +15,11 @@
 #   to proxy /foo and /bar to /foo/ and /bar/
 [[ -n "$API_RECTIFY" ]] && sed -ie "s/API_RECTIFY/${API_RECTIFY}/" /etc/nginx/nginx.conf
 
+# So that SIGTERM from docker propagates to nginx
+trap "echo \"Sending SIGTERM to nginx\"; killall -s SIGTERM nginx" SIGTERM
+
 # Runtime
-nginx -g 'daemon off;'
+nginx -g 'daemon off;' &
+
+# And now we wait...
+wait $!
